@@ -3,7 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./StoreProvider";
 
-
+import '@stream-io/video-react-sdk/dist/css/styles.css';
+import "react-datepicker/dist/react-datepicker.css";
+import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -24,6 +26,9 @@ export default function RootLayout({
       <body className={inter.className}>
        <StoreProvider>
        {children}
+       <Toaster 
+       
+       />
        </StoreProvider>
       </body>
     </html>

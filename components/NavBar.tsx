@@ -11,9 +11,18 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import links from "./SidebarLink";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useSelector } from "@/lib/redux/store";
+import { firebaseapp } from "@/lib/firebase";
 
 const NavBar = () => {
+
+  const user: any = useSelector((state) => state?.user?.info)
+
+  const login: any = useSelector((state) => state?.user?.login) 
+
+  
+  
 
   const [closesheet, setclosesheet] = useState<boolean>(false)
 
@@ -24,6 +33,8 @@ const NavBar = () => {
       setclosesheet(true)
     }
   }
+
+  const router = useRouter()
 
   const pathname = usePathname();
 
@@ -42,14 +53,21 @@ const NavBar = () => {
       </div>
 
       <div>
+       {
+        login === false ?
+
+        <button onClick={() => router.push("/auth")} className="bg-white p-3 rounded font-bold">Login</button>
+        :
+
         <Image
-          src={require("@/public/user1.png")}
-          alt="user image"
-          width={100}
-          height={100}
-          className="w-16 h-16 object-cover "
-          style={{ borderRadius: "50%" }}
-        />
+        src={user?.photoURL}
+        alt="user image"
+        width={100}
+        height={100}
+        className="w-16 h-16 object-cover "
+        style={{ borderRadius: "50%" }}
+      />
+       }
       </div>
 
       <Sheet >

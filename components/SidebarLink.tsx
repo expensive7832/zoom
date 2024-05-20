@@ -33,12 +33,7 @@ const links: linksProps[] = [
     url:"/recording",
     img: require("@/public/Video.png")
   },
-  {
-    id:5, 
-    title: "Personal",
-    url:"/personal",
-    img: require("@/public/Vector.png")
-  },
+  
 
 
 ]

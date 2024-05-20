@@ -1,24 +1,16 @@
 "use client"
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-// interface userDataProps{
-//     name: string;
-//     email: string;
-//     password: string;
-//     _id: string;
-//     phoneNumber: string;
-//     admin: boolean;
-//     staff: boolean;
-//     active: boolean;
-//     imgUrl: string;
-//     imgId: string;
-//     token: string;
-// }
+import { createSlice } from "@reduxjs/toolkit";
 
 
 interface userProps{
     login: boolean;
-    token?: string;
+    info: {
+        uid: string;
+        email: string;
+        name: string;
+        photoURL: string;
+    }
 
 }
 
@@ -26,22 +18,32 @@ interface userProps{
 
 const initialState: userProps = {
     login: false,
-    token: ""
+    info: {
+        uid: "",
+        email: "",
+        name: "",
+        photoURL: ""
+    }
     
 };
 
-const userSlice = createSlice({
+const userSlice: any = createSlice({
     name: "user",
     initialState,
     reducers: {
         login: (state, {payload}) => {
             state.login = true;
-            state.token = payload
+            state.info = payload
             
         },
         logout: (state) => {
             state.login = false;
-            state.token = ""
+            state.info = {
+                uid: "",
+                email: "",
+                name: "",
+                photoURL: ""
+            }
         },
         
     }
