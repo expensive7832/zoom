@@ -14,7 +14,7 @@ import { Call } from '@stream-io/video-react-sdk';
 
 function Recording() {
 
- const { loading, recordings } = getAllCalls()
+ const { loading, recordings } = GetAllCalls()
  
  const [allrecords, setallrecords] = useState(null)
 
