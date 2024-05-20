@@ -13,7 +13,7 @@ const links: linksProps[] = [
     id:1, 
     title: "Home",
     url:"/",
-    img: require("@/public/home.png")
+    img: require("@/public/Home.png")
   },
   {
     id:2, 
