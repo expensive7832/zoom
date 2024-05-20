@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import getAllCalls from '@/lib/hooks/GetAllCalls';
+import GetAllCalls from '@/lib/hooks/GetAllCalls';
 import Loader from '@/components/Loader';
 
 import NavBar from '@/components/NavBar';
@@ -11,7 +11,7 @@ import MeetingCard from '@/components/MeetingCard';
 
 function Upcoming() {
 
- const { loading, upcomingMeeting } = getAllCalls()
+ const { loading, upcomingMeeting } = GetAllCalls()
 
   if(loading) return <Loader/>
   
@@ -36,6 +36,7 @@ function Upcoming() {
 
          upcomingMeeting?.map((each) =>(
           <MeetingCard
+          type='upcoming'
           key={each?.id}
           title={each?.state?.custom?.description}
           date={each?.state?.startsAt?.toLocaleString() || ""}
