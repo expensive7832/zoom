@@ -83,7 +83,7 @@ if(callingState !== CallingState?.JOINED){
     
        {
             ["grid", "Speaker-right", "Speaker-left"]?.map((item: any) =>(
-              <DropdownMenuItem className='my-4 cursor-pointer' onClick={() =>{
+              <DropdownMenuItem key={item} className='my-4 cursor-pointer' onClick={() =>{
                 setSelectedLayout(item)
               
               }}>

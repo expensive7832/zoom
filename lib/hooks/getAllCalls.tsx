@@ -10,7 +10,7 @@ import { useSelector } from "../redux/store";
 import { Description } from "@radix-ui/react-toast";
 import { useToast } from "@/components/ui/use-toast";
 
-function getAllCalls() {
+function GetAllCalls() {
   const { toast } = useToast();
 
   const user = useSelector((state: any) => state?.user?.info);
@@ -50,10 +50,7 @@ function getAllCalls() {
 
     
   } catch (err: any) {
-    toast({
-      title: "error",
-      description: err?.message,
-    });
+    alert(err?.message)
   }
 
   let now = new Date();
@@ -78,4 +75,4 @@ function getAllCalls() {
   };
 }
 
-export default getAllCalls;
+export default GetAllCalls;
