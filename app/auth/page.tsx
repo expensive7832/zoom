@@ -61,7 +61,7 @@ useEffect(() => {
   return() =>{
     
   }
-}, [signIn]);
+}, [signIn, dispatch, router ]);
 
   return (
     <div className='bg-dark-1 min-h-screen w-full flex items-center justify-center'>

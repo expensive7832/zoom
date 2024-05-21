@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import getAllCalls from "@/lib/hooks/GetAllCalls";
+import getAllCalls from "@/lib/hooks/GetAllCalls.tsx";
 import Loader from "@/components/Loader";
 
 import NavBar from "@/components/NavBar";
