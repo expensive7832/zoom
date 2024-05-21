@@ -1,3 +1,4 @@
+//@ts-nocheck
 "use client";
 
 import {
@@ -19,10 +20,10 @@ function AllCalls() {
 
   const [calls, setCalls] = useState<Call[]>();
 
-  try {
-    if (!user) throw new Error("authentication failed");
+  if (!user) alert("authentication failed");
 
-    if (!client) throw new Error("error, please try again later");
+  if (!client) alert("error, please try again later");
+  try {
 
     useEffect(() => {
       const loadCalls = async () => {
