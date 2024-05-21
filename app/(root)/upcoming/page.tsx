@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import GetAllCalls from '@/lib/hooks/GetAllCalls';
+import GetAllCalls from '@/lib/hooks/AllCalls';
 import Loader from '@/components/Loader';
 
 import NavBar from '@/components/NavBar';

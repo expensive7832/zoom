@@ -10,7 +10,7 @@ import { useSelector } from "../redux/store";
 import { Description } from "@radix-ui/react-toast";
 import { useToast } from "@/components/ui/use-toast";
 
-function getAllCalls() {
+function AllCalls() {
   const user = useSelector((state: any) => state?.user?.info);
 
   const client = useStreamVideoClient();
@@ -69,4 +69,4 @@ function getAllCalls() {
   };
 }
 
-export default getAllCalls;
+export default AllCalls;
