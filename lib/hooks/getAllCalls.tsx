@@ -11,8 +11,6 @@ import { Description } from "@radix-ui/react-toast";
 import { useToast } from "@/components/ui/use-toast";
 
 function GetAllCalls() {
-  const { toast } = useToast();
-
   const user = useSelector((state: any) => state?.user?.info);
 
   const client = useStreamVideoClient();
@@ -47,25 +45,21 @@ function GetAllCalls() {
 
       loadCalls();
     }, [client, user]);
-
-    
   } catch (err: any) {
-    alert(err?.message)
+    alert(err?.message);
   }
 
   let now = new Date();
 
-    let endedMeeting = calls?.filter(
-      ({ state: { startsAt, endedAt } }: Call) => {
-        return (startsAt && new Date(startsAt) < now) || !!endedAt;
-      }
-    );
+  let endedMeeting = calls?.filter(({ state: { startsAt, endedAt } }: Call) => {
+    return (startsAt && new Date(startsAt) < now) || !!endedAt;
+  });
 
-    let upcomingMeeting = calls?.filter(
-      ({ state: { startsAt, endedAt } }: Call) => {
-        return startsAt && new Date(startsAt) > now;
-      }
-    );
+  let upcomingMeeting = calls?.filter(
+    ({ state: { startsAt, endedAt } }: Call) => {
+      return startsAt && new Date(startsAt) > now;
+    }
+  );
 
   return {
     loading,

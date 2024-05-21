@@ -22,11 +22,14 @@ function MeetingCard({title, date, participant, url, id, type, duration, filenam
 
     const { toast } = useToast()
 
+
+
     const router = useRouter()
 
-    console.log(participant);
+    console.log(url);
     
   return (
+    <div className={`${type === "recording" && url === undefined && "hidden"}`}>
     <div className='bg-dark-2 p-5 rounded'>
 
    <div className="my-3"> 
@@ -131,6 +134,7 @@ function MeetingCard({title, date, participant, url, id, type, duration, filenam
   }
    </div>
    
+    </div>
     </div>
   )
 }

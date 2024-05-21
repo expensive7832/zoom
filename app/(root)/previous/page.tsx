@@ -13,6 +13,8 @@ function Previous() {
 
  const { loading, endedMeeting } = GetAllCalls()
 
+ 
+
   if(loading) return <Loader/>
   
   return (
