@@ -15,6 +15,7 @@ import links from "./SidebarLink";
 import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "@/lib/redux/store";
 import { firebaseapp } from "@/lib/firebase";
+import Link from "next/link";
 
 const NavBar = () => {
 
@@ -90,7 +91,7 @@ const NavBar = () => {
               <div className=' min-h-screen relative'>
         {
             links?.map((each) =>(
-                <div key={each?.id} className={`flex gap-5 my-10 items-center p-3 cursor-pointer rounded-sm ${pathname == each?.url && "bg-blue-600 text-white"}`}>
+                <Link href={each?.url} key={each?.id} className={`flex gap-5 my-10 items-center p-3 cursor-pointer rounded-sm ${pathname == each?.url && "bg-blue-600 text-white"}`}>
                     <Image
                     src={each.img}
                     alt='links icon'
@@ -99,7 +100,7 @@ const NavBar = () => {
                     />
 
                     <h6 className='text-lg'>{each?.title}</h6>
-                </div>
+                </Link>
             ))
         }
 

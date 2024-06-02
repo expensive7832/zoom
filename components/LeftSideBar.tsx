@@ -23,7 +23,7 @@ function LeftSideBar() {
     <div className='bg-dark-2 p-5 relative h-full  '>
         {
             links?.map((each) =>(
-                <Link href={`${each?.url}`} key={each?.id} className={`flex gap-5 my-10 items-center p-3 cursor-pointer rounded-sm ${pathname == each?.url && "bg-blue-600"}`}>
+                <Link  href={`${each?.url}`} key={each?.id} className={`flex gap-5 my-10 items-center p-3 cursor-pointer rounded-sm ${pathname == each?.url && "bg-blue-600"}`}>
                     <Image
                     src={each.img}
                     alt='links icon'
